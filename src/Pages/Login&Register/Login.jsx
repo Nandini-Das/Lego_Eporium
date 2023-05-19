@@ -15,6 +15,7 @@ const Login = () => {
     const location = useLocation();
     console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
+    console.log(from)
   const [user, setUser] = useState({});
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
@@ -23,12 +24,12 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password)
+        console.log( email, password)
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true })
+                navigate(from, {  from: location.pathname })
             })
             .catch((error) => {
               setError('Your Email/Password does not match');

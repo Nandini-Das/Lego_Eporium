@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData} from 'react-router-dom';
 
 const ViewDetails = () => {
   const toy = useLoaderData();
   console.log(toy.name);
-
+  
   return (
     <div className='my-8'> 
      <div className="flex items-center justify-center h-screen bg-gray-100 p-2 mt-2">
