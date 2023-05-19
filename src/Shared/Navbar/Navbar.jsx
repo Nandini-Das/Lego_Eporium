@@ -75,7 +75,7 @@ const Navbar = () => {
   
               {/* Add A Toy */}
               <NavLink as={Link}
-                to="/add-toy"
+                to="/addToy"
                 className="text-amber-900 text-xl  hover:text-gray-400 py-2 px-2 rounded"
                 
               >

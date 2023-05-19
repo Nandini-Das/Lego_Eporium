@@ -17,7 +17,10 @@ const Home = () => {
    <div>
     <h3 className='text-center'>Shop By Category</h3>
     <div className='mx-auto'>
-     <ShopByCategorySection></ShopByCategorySection>
+        <div className='mx-auto'>
+        <ShopByCategorySection></ShopByCategorySection>
+        </div>
+     
     </div>
     
    </div>

@@ -1,38 +1,56 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const ShopByCategorySection = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [categories, setCategories] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/toys')
+      .then(res => res.json())
+      .then(data => setCategories(data));
+  }, []);
 
   const handleTabChange = (index) => {
     setActiveTab(index);
   };
 
-  const categories = [
-    {
-      title: 'Lego Cars',
-      subcategories: ['card1', 'Card 2', 'card 3'],
-    },
-    {
-      title: 'Category 2',
-      subcategories: ['Subcategory 4', 'Subcategory 5', 'Subcategory 6'],
-    },
-    {
-      title: 'Category 3',
-      subcategories: ['Subcategory 7', 'Subcategory 8', 'Subcategory 9'],
-    },
-    {
-      title: 'Category 4',
-      subcategories: ['Subcategory 10', 'Subcategory 11', 'Subcategory 12'],
-    },
-  ];
+  const mainCategories = Array.from(new Set(categories.map(category => category.subcategory)));
+
+  const handleViewDetails = (toyId) => {
+    if (!user?.email) {
+      confirmAlert({
+        title: 'Login Required',
+        message: 'You have to log in first to view details.',
+        buttons: [
+          {
+            label: 'Login',
+            onClick: () => navigate('/login', { state: { from: `/toys/${toyId}` } })
+          },
+          {
+            label: 'Cancel',
+            onClick: () => {}
+          }
+        ]
+      });
+    } else {
+      navigate(`/toys/${toyId}`);
+    }
+  };
 
   return (
-    <div className="p-4">
-      <Tabs>
+    <div className="flex justify-center p-4">
+      <Tabs selectedIndex={activeTab} onSelect={handleTabChange}>
         <TabList className="flex mb-4">
-          {categories.map((category, index) => (
+          {mainCategories.map((category, index) => (
             <Tab
               key={index}
               className={`px-6 py-3 mr-4 text-lg font-medium rounded-lg ${
@@ -40,28 +58,38 @@ const ShopByCategorySection = () => {
               }`}
               onClick={() => handleTabChange(index)}
             >
-              {category.title}
+              {category}
             </Tab>
           ))}
         </TabList>
 
-        {categories.map((category, index) => (
-          <TabPanel key={index}>
-            
-            <div className="grid grid-cols-3 gap-4">
-              {category.subcategories.map((subcategory, subIndex) => (
-                <div
-                  key={subIndex}
-                  className="p-4 bg-white rounded-lg shadow-lg"
-                >
-                  {/* Add content for subcategory card */}
-                  <h3 className="text-lg font-bold">{subcategory}</h3>
-                  {/* Add additional card content here */}
-                </div>
-              ))}
-            </div>
-          </TabPanel>
-        ))}
+        <div className="flex justify-center">
+          {mainCategories.map((subcategory, index) => (
+            <TabPanel key={index}>
+              <div className="grid grid-cols-3 gap-4">
+                {categories
+                  .filter(category => category.subcategory === subcategory)
+                  .map((toy, toyIndex) => (
+                    <div key={toyIndex} className="border p-4 rounded-lg">
+                      <img src={toy.picture} alt={toy.name} className="mb-2" />
+                      <h3 className="text-lg font-medium">{toy.name}</h3>
+                      <p className="text-gray-600 mb-2">{toy.price}</p>
+                      <div className="flex items-center mb-2">
+                        <span className="text-yellow-500 mr-1">&#9733;</span>
+                        <span>{toy.rating}</span>
+                      </div>
+                      <button
+                        className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                        onClick={() => handleViewDetails(toy._id)}
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  ))}
+              </div>
+            </TabPanel>
+          ))}
+        </div>
       </Tabs>
     </div>
   );
