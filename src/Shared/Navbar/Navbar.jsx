@@ -57,7 +57,7 @@ const Navbar = () => {
   
               {/* All Toys */}
               <NavLink
-               as={Link} to="/allToys"
+               as={Link} to="/toys"
                 className="text-amber-900  text-xl hover:text-gray-400 py-2 px-2 rounded"
                 
               >

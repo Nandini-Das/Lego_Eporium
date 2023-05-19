@@ -1,0 +1,90 @@
+[
+    {
+      "name": "LEGO City Fire Station",
+      "price": 59.99,
+      "rating": 4.7,
+      "seller": "BrickMart",
+      "seller_email": "brickmart@example.com",
+      "subcategory": "LEGO City",
+      "picture": "https://images.unsplash.com/photo-1505322033502-1f4385692e6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=768&q=80",
+      "available_quantity": 8,
+      "detail_description": "Protect the citizens of LEGO City with the Fire Station set! It comes with a fire truck, fire helicopter, and firefighters. The fire station features a control tower, garage, and even a sliding pole. Get ready to respond to emergencies and save the day!"
+    },
+    {
+      "name": "LEGO City Passenger Train",
+      "price": 129.99,
+      "rating": 4.9,
+      "seller": "BrickMart",
+      "seller_email": "brickmart@example.com",
+      "subcategory": "LEGO City",
+      "picture": "https://images.unsplash.com/photo-1666912248047-9f6d4dc723ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "available_quantity": 3,
+      "detail_description": "All aboard the LEGO City Passenger Train! This set includes a motorized engine, passenger carriages, train platform, and minifigures. With remote control functions, you can control the train's speed and direction. Take your passengers on an exciting journey through LEGO City!"
+    },
+    {
+      "name": "LEGO Star Wars Millennium Falcon",
+      "price": 149.99,
+      "rating": 5.0,
+      "seller": "GalacticBricks",
+      "seller_email": "galacticbricks@example.com",
+      "subcategory": "LEGO Star Wars",
+      "picture": "https://images.unsplash.com/photo-1586858926949-26e502869828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80",
+      "available_quantity": 5,
+      "detail_description": "Join the epic adventures in a galaxy far, far away with the LEGO Star Wars Millennium Falcon set. This iconic spaceship features intricate details, removable hull panels, and a variety of minifigures from the Star Wars universe. Get ready to engage in thrilling space battles and reenact your favorite Star Wars scenes!"
+    },
+    {
+      "name": "LEGO Star Wars Death Star",
+      "price": 399.99,
+      "rating": 4.8,
+      "seller": "GalacticBricks",
+      "seller_email": "galacticbricks@example.com",
+      "subcategory": "LEGO Star Wars",
+      "picture": "https://images.unsplash.com/photo-1657301103216-066f9442980a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=775&q=80",
+      "available_quantity": 2,
+      "detail_description": "Construct the ultimate LEGO Star Wars Death Star! This massive set includes multiple levels, minifigures, and iconic scenes from the Star Wars movies. Battle with the Rebel Alliance or defend the Death Star with the Imperial forces. Will you choose the light side or the dark side?"
+    },
+    {
+      "name": "LEGO Architecture Statue of Liberty",
+      "price": 99.99,
+      "rating": 4.6,
+      "seller": "ArchBricks",
+      "seller_email": "archbricks@example.com",
+      "subcategory": "LEGO Architecture",
+      "picture": "https://images.unsplash.com/photo-1568756645368-76238940ec64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "available_quantity": 6,
+      "detail_description": "Celebrate the world's most famous landmarks with the LEGO Architecture Statue of Liberty set. This detailed replica captures the beauty and grandeur of the iconic statue. It includes a booklet with information about the design, architecture, and history. A must-have for LEGO and architecture enthusiasts!"
+    },
+    {
+      "name": "LEGO Architecture Tokyo Skyline",
+      "price": 59.99,
+      "rating": 4.7,
+      "seller": "ArchBricks",
+      "seller_email": "archbricks@example.com",
+      "subcategory": "LEGO Architecture",
+      "picture": "https://images.unsplash.com/photo-1533312708351-43abf900ba14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=313&q=80",
+      "available_quantity": 4,
+      "detail_description": "Experience the vibrant cityscape of Tokyo with the LEGO Architecture Tokyo Skyline set. It features famous landmarks such as Tokyo Tower, the Tokyo Skytree, and the Shibuya Crossing. Display this architectural masterpiece and appreciate the unique beauty of Tokyo's skyline!"
+    },
+    {
+      "name": "LEGO Cars Lightning McQueen's Race Day",
+      "price": 39.99,
+      "rating": 4.5,
+      "seller": "CarToys",
+      "seller_email": "cartoys@example.com",
+      "subcategory": "LEGO Cars",
+      "picture": "https://images.unsplash.com/photo-1529978755210-7f13333beb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "available_quantity": 7,
+      "detail_description": "Get ready for Lightning McQueen's Race Day with this thrilling LEGO Cars set. Build Lightning McQueen and Cruz Ramirez, then race them on the track. Use the starting gate, checkered flag, and other accessories to recreate the excitement of the Cars movies!"
+    },
+    {
+      "name": "LEGO Cars Mack's Team Truck",
+      "price": 79.99,
+      "rating": 4.8,
+      "seller": "CarToys",
+      "seller_email": "cartoys@example.com",
+      "subcategory": "LEGO Cars",
+      "picture": "https://images.unsplash.com/photo-1590912710629-d87662109950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1033&q=80",
+      "available_quantity": 5,
+      "detail_description": "Join Lightning McQueen and his friends on the road with the LEGO Cars Mack's Team Truck set. Build Mack, the loyal truck, and transport Lightning McQueen to his next race. This set includes accessories and minifigures inspired by the beloved Cars franchise!"
+    }
+  ]
