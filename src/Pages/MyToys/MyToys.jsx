@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 
+import UpdateToy from './UpdateToy';
+import { Link } from 'react-router-dom';
+
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [sortOrder, setSortOrder] = useState('ascending');
-
+  
+  console.log(toys)
   useEffect(() => {
     fetch(`http://localhost:5000/toys?${user?.email}&sort=${sortOrder}`)
       .then((res) => res.json())
@@ -13,10 +17,29 @@ const MyToys = () => {
         console.log(data);
         setToys(data);
       });
-  }, [user]);
+  }, [user, sortOrder]);
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
+  };
+
+
+  const handleDelete = (_id) => {
+    const proceed = confirm('Are You sure you want to delete');
+    if (proceed) {
+        fetch(`http://localhost:5000/toys/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    alert('deleted successful');
+                    const remaining = toys.filter(toy => toy._id !== _id);
+                    setToys(remaining);
+                }
+            })
+    }
   };
 
   const sortedToys = [...toys].sort((a, b) => {
@@ -47,6 +70,7 @@ const MyToys = () => {
         <table className="table table-zebra table-bordered">
           <thead>
             <tr>
+            <th>#</th>
               <th>Toy Name</th>
               <th>Price</th>
               <th>Quantity</th>
@@ -55,15 +79,24 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredToys.map((item) => (
+            {filteredToys.map((item, index) => (
               <tr key={item.id}>
+                <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.price}</td>
                 <td>{item.available_quantity}</td>
                 <td>{item.detail_description}</td>
                 <td>
-                  <button className="btn btn-sm btn-primary">Update</button>
-                  <button className="btn btn-sm btn-danger ml-2">Delete</button>
+               <Link to={`/updateToy/${item._id}`}> <button className="btn btn-sm btn-primary ml-2" variant="primary">
+                   Update
+                  </button></Link>
+                  
+                </td>
+                <td>
+                  {" "}
+                  <button className="btn btn-sm btn-danger ml-2" onClick={() => handleDelete(item._id)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
@@ -77,4 +110,3 @@ const MyToys = () => {
 };
 
 export default MyToys;
- 
