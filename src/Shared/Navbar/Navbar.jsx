@@ -64,14 +64,7 @@ const Navbar = () => {
                 All Toys
               </NavLink>
   
-              {/* My Toys */}
-              <NavLink as={Link}
-                to="/my-toys"
-                className="text-amber-900 text-xl hover:text-gray-400 py-2 px-2 rounded"
-                
-              >
-                My Toys
-              </NavLink>
+              
   
               {/* Add A Toy */}
               <NavLink as={Link}
@@ -102,10 +95,21 @@ const Navbar = () => {
             title={user.displayName}
           />
         )}
-        {user ? (
+        {user ? (<>
+         
+  
           <button className="float-end m-4 me-2 btn btn-secondary" onClick={handleLogOut}>
             Logout
           </button>
+          <NavLink as={Link}
+                to="/myToys"
+                className="text-amber-900 text-xl hover:text-gray-400 py-2 px-2 rounded"
+                
+              >
+                My Toys
+              </NavLink>
+        </>
+          
         ) : (
           <Link to="/login">
             <button className="btn btn-secondary">Login</button>

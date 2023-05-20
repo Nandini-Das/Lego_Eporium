@@ -33,7 +33,7 @@ const AddToy = () => {
     };
 
     // console.log(toy);
-    fetch('http://localhost:5000/myToys', {
+    fetch('http://localhost:5000/toys', {
         method: 'POST', 
         headers: {
             'content-type': 'application/json'
