@@ -33,7 +33,7 @@ const ShopByCategorySection = () => {
         buttons: [
           {
             label: 'Login',
-            onClick: () => navigate('/login', { state: { from: `/toys/${toyId}` } })
+            onClick: () => navigate('/login', { state: { from: location.pathname } })
           },
           {
             label: 'Cancel',
