@@ -7,7 +7,7 @@ const UpdateToy = () => {
   const { user } = useContext(AuthContext);
   const { _id, name, price, available_quantity, detail_description } = toys;
   const [myToys, setMyToys] = useState([]);
-  const url = "http://localhost:5000/updateToy";
+  const url = "https://assignment-11-toy-marketplace-server-gules.vercel.app/updateToy";
 
   useEffect(() => {
     fetch(url)
@@ -17,7 +17,7 @@ const UpdateToy = () => {
 
   const handleUpdate = id => {
     event.preventDefault()
-    fetch(`http://localhost:5000/updateToy/${id}`, {
+    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/updateToy/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'

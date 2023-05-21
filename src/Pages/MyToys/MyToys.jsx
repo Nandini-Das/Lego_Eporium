@@ -11,7 +11,7 @@ const MyToys = () => {
   
   console.log(toys)
   useEffect(() => {
-    fetch(`http://localhost:5000/toys?${user?.email}&sort=${sortOrder}`)
+    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys?${user?.email}&sort=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -27,7 +27,7 @@ const MyToys = () => {
   const handleDelete = (_id) => {
     const proceed = confirm('Are You sure you want to Delete??');
     if (proceed) {
-        fetch(`http://localhost:5000/toys/${_id}`, {
+        fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

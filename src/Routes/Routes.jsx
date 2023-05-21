@@ -30,23 +30,23 @@ const router = createBrowserRouter([
         {
             path: "/toys/:id",
             element: <PrivateRoute><ViewDeatils></ViewDeatils></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys/${params.id}`)
         },
         
         {
             path: "/myToys",
             element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-            loader: () => fetch("http://localhost:5000/toys")
+            loader: () => fetch("https://assignment-11-toy-marketplace-server-gules.vercel.app/toys")
         },
         {
             path: "/addToy",
             element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
-            loader: () => fetch("http://localhost:5000/toys")
+            loader: () => fetch("https://assignment-11-toy-marketplace-server-gules.vercel.app/toys")
         },
         {
             path: "/updateToy/:id",
             element: <UpdateToy></UpdateToy>,
-            loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`),
+            loader: ({params}) => fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys/${params.id}`),
         },
         {
             path: "/blogs",
