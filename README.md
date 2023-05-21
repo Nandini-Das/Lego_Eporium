@@ -14,6 +14,6 @@
 * You can login with email-password, google.
 * Use this site to Buy your fav Lego sets
 
-### Private Repo Link: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-Nandini-Das](https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-Nandini-Das)
 
-### Live site Link : [https://the-fusion-of-chef-s-recipe.web.app/](https://the-fusion-of-chef-s-recipe.web.app/)
+
+### Live site Link : [https://lego-eporium.web.app//](https://lego-eporium.web.app/)
