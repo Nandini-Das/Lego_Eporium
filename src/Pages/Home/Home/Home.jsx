@@ -1,25 +1,33 @@
 import React from 'react';
-
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import GallerySection from './GallerySection';
 import Banner from './Banner';
 import ShopByCategorySection from './ShopByCategorySection';
+import FlashSaleSection from './FlashSaleSection';
+import HappyCustomer from './HappyCustomer';
+
+
 
 const Home = () => {
     return (
         <div>
            <Banner></Banner>
    <div>
-    <h1 className='text-center'>Gallery Section</h1>
+   
     <GallerySection></GallerySection>
    </div>
    <div>
-    <h3 className='text-center'>Shop By Category</h3>
+    <h3 className='"text-6xl text-orange-700 font-bold mb-4 text-center"'>Shop By Category</h3>
     <div className='mx-auto'>
         <div className='mx-auto'>
         <ShopByCategorySection></ShopByCategorySection>
         </div>
+        <div>
+        <FlashSaleSection></FlashSaleSection>
+        </div>
+    <div>
+       <HappyCustomer></HappyCustomer>
+    </div>
      
     </div>
     

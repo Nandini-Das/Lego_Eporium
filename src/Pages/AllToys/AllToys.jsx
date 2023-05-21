@@ -5,6 +5,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredToys, setFilteredToys] = useState([]);
+  const [showAllToys, setShowAllToys] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:5000/toys')
@@ -23,9 +24,13 @@ const AllToys = () => {
     setFilteredToys(filtered.slice(0, 20));
   };
 
+  const handleSeeMore = () => {
+    setShowAllToys(true);
+    setFilteredToys(toys);
+  };
+
   return (
     <div>
-     
       <div className="mb-4 p-4">
         <input
           type="text"
@@ -36,6 +41,11 @@ const AllToys = () => {
         />
       </div>
       <AllToysTable toys={filteredToys} />
+      {!showAllToys && (
+        <button onClick={handleSeeMore} className="bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 ">
+          See More
+        </button>
+      )}
     </div>
   );
 };

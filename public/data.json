@@ -86,5 +86,114 @@
       "picture": "https://images.unsplash.com/photo-1590912710629-d87662109950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1033&q=80",
       "available_quantity": 5,
       "detail_description": "Join Lightning McQueen and his friends on the road with the LEGO Cars Mack's Team Truck set. Build Mack, the loyal truck, and transport Lightning McQueen to his next race. This set includes accessories and minifigures inspired by the beloved Cars franchise!"
+    },  {
+      "name": "LEGO City Fire Station",
+      "price": 59.99,
+      "rating": 4.7,
+      "seller": "BrickMart",
+      "seller_email": "brickmart@example.com",
+      "subcategory": "LEGO City",
+      "picture": "https://images.unsplash.com/photo-1505322033502-1f4385692e6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=768&q=80",
+      "available_quantity": 8,
+      "detail_description": "Protect the citizens of LEGO City with the Fire Station set! It comes with a fire truck, fire helicopter, and firefighters. The fire station features a control tower, garage, and even a sliding pole. Get ready to respond to emergencies and save the day!"
+    },
+    {
+      "name": "LEGO City Passenger Train",
+      "price": 129.99,
+      "rating": 4.9,
+      "seller": "BrickMart",
+      "seller_email": "brickmart@example.com",
+      "subcategory": "LEGO City",
+      "picture": "https://images.unsplash.com/photo-1666912248047-9f6d4dc723ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "available_quantity": 3,
+      "detail_description": "All aboard the LEGO City Passenger Train! This set includes a motorized engine, passenger carriages, train platform, and minifigures. With remote control functions, you can control the train's speed and direction. Take your passengers on an exciting journey through LEGO City!"
+    },
+    {
+      "name": "LEGO Star Wars Millennium Falcon",
+      "price": 149.99,
+      "rating": 5.0,
+      "seller": "GalacticBricks",
+      "seller_email": "galacticbricks@example.com",
+      "subcategory": "LEGO Star Wars",
+      "picture": "https://images.unsplash.com/photo-1586858926949-26e502869828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80",
+      "available_quantity": 5,
+      "detail_description": "Join the epic adventures in a galaxy far, far away with the LEGO Star Wars Millennium Falcon set. This iconic spaceship features intricate details, removable hull panels, and a variety of minifigures from the Star Wars universe. Get ready to engage in thrilling space battles and reenact your favorite Star Wars scenes!"
+    },
+    {
+      "name": "LEGO Star Wars Death Star",
+      "price": 399.99,
+      "rating": 4.8,
+      "seller": "GalacticBricks",
+      "seller_email": "galacticbricks@example.com",
+      "subcategory": "LEGO Star Wars",
+      "picture": "https://images.unsplash.com/photo-1597096316802-65ab4d94b1f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1650&q=80",
+      "available_quantity": 2,
+      "detail_description": "Take on the dark side with the LEGO Star Wars Death Star set. This massive space station includes multiple levels, iconic scenes, and various minifigures. Will you help the Rebel Alliance destroy the Death Star or join the Empire in defending it? The choice is yours!"
+    },
+    {
+      "name": "LEGO Creator Expert Taj Mahal",
+      "price": 369.99,
+      "rating": 4.9,
+      "seller": "MasterBuilders",
+      "seller_email": "masterbuilders@example.com",
+      "subcategory": "LEGO Creator Expert",
+      "picture": "https://images.unsplash.com/photo-1604191163536-c7686f4f5c49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
+      "available_quantity": 4,
+      "detail_description": "Experience the architectural wonder with the LEGO Creator Expert Taj Mahal set. This highly detailed model features intricate patterns, domes, and minarets. With over 5,900 pieces, it's a challenging and rewarding build. Celebrate the beauty of the Taj Mahal from the comfort of your home!"
+    },
+    {
+      "name": "LEGO Creator Expert Bookshop",
+      "price": 179.99,
+      "rating": 4.8,
+      "seller": "MasterBuilders",
+      "seller_email": "masterbuilders@example.com",
+      "subcategory": "LEGO Creator Expert",
+      "picture": "https://images.unsplash.com/photo-1573008712644-1ea8f0a02084?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1650&q=80",
+      "available_quantity": 6,
+      "detail_description": "Step into the LEGO Creator Expert Bookshop and explore its charming details. This modular building features a bookstore and a quaint townhouse. With multiple floors and hidden surprises, it's a delight for LEGO enthusiasts. Create your own stories and immerse yourself in the cozy bookshop atmosphere!"
+    },
+    {
+      "name": "LEGO Technic Bugatti Chiron",
+      "price": 349.99,
+      "rating": 4.9,
+      "seller": "MechanicToys",
+      "seller_email": "mechanictoys@example.com",
+      "subcategory": "LEGO Technic",
+      "picture": "https://images.unsplash.com/photo-1601933247697-8c46a5623944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
+      "available_quantity": 7,
+      "detail_description": "Experience the engineering marvel of the LEGO Technic Bugatti Chiron. This exclusive set includes detailed features like a W16 engine, aerodynamic bodywork, and functional suspension. With over 3,500 pieces, it's a challenging build that rewards you with a stunning replica of the iconic sports car."
+    },
+    {
+      "name": "LEGO Technic Liebherr R 9800 Excavator",
+      "price": 449.99,
+      "rating": 4.8,
+      "seller": "MechanicToys",
+      "seller_email": "mechanictoys@example.com",
+      "subcategory": "LEGO Technic",
+      "picture": "https://images.unsplash.com/photo-1613152063201-3e25fd6091e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1650&q=80",
+      "available_quantity": 2,
+      "detail_description": "Take on heavy-duty construction with the LEGO Technic Liebherr R 9800 Excavator. This impressive model features an array of realistic functions, including movable tracks, rotating superstructure, and detailed bucket attachments. Control the excavator using the advanced app for an immersive building experience!"
+    },
+    {
+      "name": "Nintendo Switch Console",
+      "price": 299.99,
+      "rating": 4.8,
+      "seller": "GameWorld",
+      "seller_email": "gameworld@example.com",
+      "subcategory": "Gaming Consoles",
+      "picture": "https://images.unsplash.com/photo-1584984071647-003d0ae8c6f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+      "available_quantity": 10,
+      "detail_description": "Enter the world of gaming on the go with the Nintendo Switch console. This versatile gaming system allows you to play in handheld mode or connect it to your TV for a traditional console experience. With a wide selection of games and the ability to play with friends, it's the perfect choice for gamers of all ages."
+    },
+    {
+      "name": "PlayStation 5",
+      "price": 499.99,
+      "rating": 4.9,
+      "seller": "GameWorld",
+      "seller_email": "gameworld@example.com",
+      "subcategory": "Gaming Consoles",
+      "picture": "https://images.unsplash.com/photo-1603467729971-4247ba93d6ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1650&q=80",
+      "available_quantity": 5,
+      "detail_description": "Experience the next generation of gaming with the PlayStation 5. This powerful console delivers stunning graphics, immersive gameplay, and lightning-fast loading times. With a library of exclusive titles and online multiplayer capabilities, it's a must-have for any gaming enthusiast."
     }
   ]

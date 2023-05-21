@@ -20,21 +20,7 @@ const Banner = () => {
   
            
             <div className="text-center">
-            <div className="bg-red-100 py-8">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center">
-      <h2 className="text-3xl font-extrabold text-gray-900">
-        %Flash Sale%
-      </h2>
-      <p className="mt-2 text-lg text-gray-600">
-        Don't miss out on these amazing deals!
-      </p>
-    </div>
-    <div className="mt-3">
-    <button class="btn btn-outline btn-secondary">Shop Now</button>
-    </div>
-  </div>
-</div>
+            <img src="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" srcset="" />
             </div>
           </div>
         </div>

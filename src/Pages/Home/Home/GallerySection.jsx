@@ -14,7 +14,7 @@ const GallerySection = () => {
   return (
     
         <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Photo Gallery</h2>
+      <h2 className="text-2xl text-orange-700 font-bold mb-4 text-center">Photo Gallery </h2>
       <div className="">
       <Marquee
        speed={150} // Adjust the speed value as desired (lower value for faster scrolling)

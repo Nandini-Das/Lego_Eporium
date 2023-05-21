@@ -80,7 +80,7 @@ const MyToys = () => {
           </thead>
           <tbody>
             {filteredToys.map((item, index) => (
-              <tr key={item.id}>
+              <tr >
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.price}</td>
@@ -90,7 +90,7 @@ const MyToys = () => {
                <Link to={`/updateToy/${item._id}`}> <button className="btn btn-sm btn-primary ml-2" variant="primary">
                    Update
                   </button></Link>
-                  
+                 
                 </td>
                 <td>
                   {" "}
@@ -105,6 +105,7 @@ const MyToys = () => {
       ) : (
         <p>No toys available.</p>
       )}
+      
     </div>
   );
 };
