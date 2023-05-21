@@ -11,7 +11,7 @@ const ErrorPage = () => {
           
           <div className='text-center'>
           <a href="/" className="px-4  text-center py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
-            Back to Home
+            Go Back to Home
           </a>
           </div>
          
