@@ -1,4 +1,4 @@
-# The Fusion of Thai CHef's Recipe
+# LEGO EPORIUM
  I am Nandini Das. A student of Programming Hero batch 7. I have developed this website with React.
 # Best Features
 * Blog page in Navbar
