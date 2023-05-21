@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import GallerySection from './GallerySection';
 import Banner from './Banner';
@@ -6,9 +6,13 @@ import ShopByCategorySection from './ShopByCategorySection';
 import FlashSaleSection from './FlashSaleSection';
 import HappyCustomer from './HappyCustomer';
 
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
     return (
         <div>
            <Banner></Banner>

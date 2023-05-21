@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Marquee from "react-fast-marquee";
 const GallerySection = () => {
-  
+  useEffect(() => {
+    AOS.init();
+  }, []);
     const images = [
         { id: 1, src: 'https://images.unsplash.com/photo-1618003657844-aa7560c8676a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80', alt: 'Image 1' },
         { id: 2, src: 'https://images.unsplash.com/photo-1618897871149-49ec9334af79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxlZ28lMjB0b3lzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60', alt: 'Image 2' },
@@ -14,7 +18,7 @@ const GallerySection = () => {
   return (
     
         <div className="p-4">
-      <h2 className="text-2xl text-orange-700 font-bold mb-4 text-center">Photo Gallery </h2>
+      <h2  data-aos="fade-up" className="text-2xl text-orange-700 font-bold mb-4 text-center">Photo Gallery </h2>
       <div className="">
       <Marquee
        speed={150} // Adjust the speed value as desired (lower value for faster scrolling)

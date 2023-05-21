@@ -1,6 +1,10 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const FlashSaleSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const flashSaleItems = [
     {
       title: 'Lego City Space Rover',
@@ -33,10 +37,10 @@ const FlashSaleSection = () => {
     <section className="bg-gray-100 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-purple-900">
+          <h2 data-aos="fade-up" className="text-3xl font-extrabold text-purple-900">
             %Flash Sale%
           </h2>
-          <p className="mt-4 text-lg text-blue-400">
+          <p data-aos="fade-up" className="mt-4 text-lg text-blue-400">
             Limited-time offers on Lego sets. Hurry up and grab your favorite sets at discounted prices!
           </p>
         </div>
@@ -52,7 +56,7 @@ const FlashSaleSection = () => {
                 <h3 className="text-xl font-medium text-gray-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-base text-gray-500">
+                <p  data-aos="fade-up" className="mt-2 text-base text-gray-500">
                   {item.description}
                 </p>
                 <div className="mt-4 flex items-center justify-between">
