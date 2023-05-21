@@ -9,9 +9,8 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
   const [sortOrder, setSortOrder] = useState('ascending');
   
-  console.log(toys)
   useEffect(() => {
-    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys?${user?.email}&sort=${sortOrder}`)
+    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys?email=${user?.email}&sort=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -25,20 +24,20 @@ const MyToys = () => {
 
 
   const handleDelete = (_id) => {
-    const proceed = confirm('Are You sure you want to Delete??');
+    const proceed = window.confirm('Are you sure you want to delete?');
     if (proceed) {
-        fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys/${_id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    alert('Deleted successfully');
-                    const remaining = toys.filter(toy => toy._id !== _id);
-                    setToys(remaining);
-                }
-            })
+      fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys/${_id}`, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert('Deleted successfully');
+            const remaining = toys.filter(toy => toy._id !== _id);
+            setToys(remaining);
+          }
+        });
     }
   };
 
@@ -54,7 +53,7 @@ const MyToys = () => {
   const filteredToys = sortedToys.filter((toy) => toy.seller_email === user.email);
 
   return (
-    <div>
+    <div className="container">
       <div className="flex items-center mb-4">
         <span className="mr-2">Sort By:</span>
         <select
@@ -70,30 +69,36 @@ const MyToys = () => {
         <table className="table table-zebra table-bordered">
           <thead>
             <tr>
-            <th>#</th>
-              <th>Toy Name</th>
+              <th>#</th>
+              <th>Picture</th>
+              <th>Name</th>
+              
+              <th>Sub-category</th>
               <th>Price</th>
-              <th>Quantity</th>
-              <th>Description</th>
+              <th>Rating</th>
+              <th>Available Quantity</th>
+              <th>Detail Description</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredToys.map((item, index) => (
-              <tr >
+              <tr key={item._id}>
                 <td>{index + 1}</td>
+                <td><img src={item.picture} alt={item.name} width="50" /></td>
                 <td>{item.name}</td>
+               
+                <td>{item.subcategory}</td>
                 <td>{item.price}</td>
+                <td>{item.rating}</td>
                 <td>{item.available_quantity}</td>
                 <td>{item.detail_description}</td>
                 <td>
-               <Link to={`/updateToy/${item._id}`}> <button className="btn btn-sm btn-primary ml-2" variant="primary">
-                   Update
-                  </button></Link>
-                 
-                </td>
-                <td>
-                  {" "}
+                  <Link to={`/updateToy/${item._id}`}>
+                    <button className="btn btn-sm btn-primary ml-2" variant="primary">
+                      Update
+                    </button>
+                  </Link>
                   <button className="btn btn-sm btn-danger ml-2" onClick={() => handleDelete(item._id)}>
                     Delete
                   </button>
@@ -105,7 +110,6 @@ const MyToys = () => {
       ) : (
         <p>No toys available.</p>
       )}
-      
     </div>
   );
 };

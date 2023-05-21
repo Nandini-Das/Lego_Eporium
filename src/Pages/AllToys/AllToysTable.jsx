@@ -9,6 +9,7 @@ const AllToysTable = ({toys}) => {
         <table className="table w-full">
           <thead>
             <tr>
+            <th className="px-4 py-2">#</th>
               <th className="px-4 py-2">Seller</th>
               <th className="px-4 py-2">Toy Name</th>
               <th className="px-4 py-2">Sub-category</th>
@@ -18,8 +19,9 @@ const AllToysTable = ({toys}) => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy, _id) => (
+            {toys.map((toy,_id) => (
               <tr key={_id}>
+                
                 <td className="px-4 py-2">{toy.seller}</td>
                 <td className="px-4 py-2">{toy.name}</td>
                 <td className="px-4 py-2">{toy.subcategory}</td>

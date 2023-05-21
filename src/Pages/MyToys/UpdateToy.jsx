@@ -1,109 +1,119 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
-const UpdateToy = () => {
-  const toys = useLoaderData();
+import UpdateToy from './UpdateToy';
+import { Link } from 'react-router-dom';
+
+const MyToys = () => {
   const { user } = useContext(AuthContext);
-  const { _id, name, price, available_quantity, detail_description } = toys;
-  const [myToys, setMyToys] = useState([]);
-  const url = "http://localhost:5000/updateToy";
-
+  const [toys, setToys] = useState([]);
+  const [sortOrder, setSortOrder] = useState('ascending');
+  
   useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setMyToys(data));
-  }, [url]);
-
-  const handleUpdate = id => {
-    event.preventDefault()
-    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/updateToy/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({ status: 'confirm' })
-    })
-      .then(res => res.json())
-      .then(data => {
+    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys?email=${user?.email}&sort=${sortOrder}`)
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if (data.modifiedCount > 0) {
-          // Update state
-          const remaining = myToys.filter(toy => toy._id !== id);
-          const updated = myToys.find(toy => toy._id === id);
-          updated.status = 'confirm';
-          alert('Updated Successfully');
-          const newToys = [updated, ...remaining];
-          setMyToys(newToys);
-        }
+        setToys(data);
       });
-    console.log(id)
+  }, [user, sortOrder]);
+
+  const handleSortChange = (event) => {
+    setSortOrder(event.target.value);
   };
 
+
+  const handleDelete = (_id) => {
+    const proceed = window.confirm('Are you sure you want to delete?');
+    if (proceed) {
+      fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/toys/${_id}`, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert('Deleted successfully');
+            const remaining = toys.filter(toy => toy._id !== _id);
+            setToys(remaining);
+          }
+        });
+    }
+  };
+
+  const sortedToys = [...toys].sort((a, b) => {
+    if (sortOrder === 'ascending') {
+      return a.price - b.price;
+    } else if (sortOrder === 'descending') {
+      return b.price - a.price;
+    }
+    return 0;
+  });
+
+  const filteredToys = sortedToys.filter((toy) => toy.seller_email === user.email);
+
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded shadow-md">
-      <h2 className="text-3xl font-bold mb-4 text-center">Update Toy</h2>
-      <form>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="name" className="block font-medium">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              defaultValue={name}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
-          <div>
-            <label htmlFor="price" className="block font-medium">
-              Price
-            </label>
-            <input
-              type="text"
-              name="price"
-              id="price"
-              defaultValue={price}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
-          <div>
-            <label htmlFor="availableQuantity" className="block font-medium">
-              Available Quantity
-            </label>
-            <input
-              type="text"
-              name="available_quantity"
-              id="available_quantity"
-              defaultValue={available_quantity}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
-          <div className="col-span-2">
-            <label htmlFor="description" className="block font-medium">
-              Description
-            </label>
-            <textarea
-              id="detail_description"
-              name="detail_description"
-              defaultValue={detail_description}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            ></textarea>
-          </div>
-        </div>
-        <div className="text-center mt-4">
-          <button
-           
-            className="bg-blue-500 text-white rounded px-4 py-2 font-medium hover:bg-blue-600"
-            onClick={() => handleUpdate(_id)}
-          >
-            Update Toy
-          </button>
-        </div>
-      </form>
+    <div className="container">
+      <div className="flex items-center mb-4">
+        <span className="mr-2">Sort By:</span>
+        <select
+          className="border border-gray-300 rounded px-2 py-1"
+          value={sortOrder}
+          onChange={handleSortChange}
+        >
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
+      {filteredToys.length > 0 ? (
+        <table className="table table-zebra table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Picture</th>
+              <th>Name</th>
+              <th>Seller Name</th>
+              <th>Seller Email</th>
+              <th>Sub-category</th>
+              <th>Price</th>
+              <th>Rating</th>
+              <th>Available Quantity</th>
+              <th>Detail Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredToys.map((item, index) => (
+              <tr key={item._id}>
+                <td>{index + 1}</td>
+                <td><img src={item.picture_url} alt={item.name} width="50" /></td>
+                <td>{item.name}</td>
+                <td>{item.seller_name}</td>
+                <td>{item.seller_email}</td>
+                <td>{item.sub_category}</td>
+                <td>{item.price}</td>
+                <td>{item.rating}</td>
+                <td>{item.available_quantity}</td>
+                <td>{item.detail_description}</td>
+                <td>
+                  <Link to={`/updateToy/${item._id}`}>
+                    <button className="btn btn-sm btn-primary ml-2" variant="primary">
+                      Update
+                    </button>
+                  </Link>
+                  <button className="btn btn-sm btn-danger ml-2" onClick={() => handleDelete(item._id)}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>No toys available.</p>
+      )}
     </div>
   );
 };
 
-export default UpdateToy;
+export default MyToys;
