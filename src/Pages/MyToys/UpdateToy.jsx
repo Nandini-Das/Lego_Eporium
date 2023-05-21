@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -6,37 +6,44 @@ const UpdateToy = () => {
   const toys = useLoaderData();
   const { user } = useContext(AuthContext);
   const { _id, name, price, available_quantity, detail_description } = toys;
+  const [myToys, setMyToys] = useState([]);
+  const url = "http://localhost:5000/updateToy";
 
-  const handleUpdate = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const updatedToy = {
-      name: form.name.value,
-      price: form.price.value,
-      available_quantity: form.available_quantity.value,
-      detail_description: form.detail_description.value,
-    };
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setMyToys(data));
+  }, [url]);
 
-    fetch(`http://localhost:5000/toys/${_id}`, {
-      method: 'PUT',
+  const handleUpdate = id => {
+    event.preventDefault()
+    fetch(`http://localhost:5000/updateToy/${id}`, {
+      method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json',
+        'content-type': 'application/json'
       },
-      body: JSON.stringify(updatedToy),
+      body: JSON.stringify({ status: 'confirm' })
     })
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          alert('Updated Toy Successfully');
+          // Update state
+          const remaining = myToys.filter(toy => toy._id !== id);
+          const updated = myToys.find(toy => toy._id === id);
+          updated.status = 'confirm';
+          alert('Updated Successfully');
+          const newToys = [updated, ...remaining];
+          setMyToys(newToys);
         }
       });
+    console.log(id)
   };
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded shadow-md">
       <h2 className="text-3xl font-bold mb-4 text-center">Update Toy</h2>
-      <form onSubmit={handleUpdate}>
+      <form>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="name" className="block font-medium">
@@ -87,8 +94,9 @@ const UpdateToy = () => {
         </div>
         <div className="text-center mt-4">
           <button
-            type="submit"
+           
             className="bg-blue-500 text-white rounded px-4 py-2 font-medium hover:bg-blue-600"
+            onClick={() => handleUpdate(_id)}
           >
             Update Toy
           </button>

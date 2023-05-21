@@ -25,7 +25,7 @@ const MyToys = () => {
 
 
   const handleDelete = (_id) => {
-    const proceed = confirm('Are You sure you want to delete');
+    const proceed = confirm('Are You sure you want to Delete??');
     if (proceed) {
         fetch(`http://localhost:5000/toys/${_id}`, {
             method: 'DELETE'
@@ -34,7 +34,7 @@ const MyToys = () => {
             .then(data => {
                 console.log(data);
                 if (data.deletedCount > 0) {
-                    alert('deleted successful');
+                    alert('Deleted successfully');
                     const remaining = toys.filter(toy => toy._id !== _id);
                     setToys(remaining);
                 }
