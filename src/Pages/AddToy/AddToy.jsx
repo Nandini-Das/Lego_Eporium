@@ -33,7 +33,7 @@ const AddToy = () => {
     };
 
     // console.log(toy);
-    fetch('http://localhost:5000/toys', {
+    fetch('https://assignment-11-toy-marketplace-server-gules.vercel.app/toys', {
         method: 'POST', 
         headers: {
             'content-type': 'application/json'

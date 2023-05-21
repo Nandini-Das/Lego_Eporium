@@ -17,7 +17,7 @@ const UpdateToy = () => {
 
   const handleUpdate = id => {
     event.preventDefault()
-    fetch(`http://localhost:5000/updateToy/${id}`, {
+    fetch(`https://assignment-11-toy-marketplace-server-gules.vercel.app/updateToy/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'
